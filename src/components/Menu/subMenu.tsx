@@ -4,9 +4,10 @@ import { MenuContext } from "./menu";
 import { MenuItemProps } from "./menuItem";
 // import Icon from "../Icon/icon";
 // import Transition from "../Transition/transition";
+
 export interface SubMenuProps {
-  index?: string;
-  title: string;
+  index?: string; // 索引
+  title: string; // 标题
   className?: string;
 }
 
