@@ -1,5 +1,14 @@
 # react-base-ui
 
+## 使用插件
+
++ [fortawesome](https://github.com/FortAwesome/react-fontawesome)
++ [react-transition-group](https://github.com/reactjs/react-transition-group)
++ UI文档生成工具
+  + Storybook: UI组件开发管理的工具
+  + react-docgen-typescript-loader
+  + 代码注释 —— JSDoc's规范
+
 ## 知识点
 
 + scss - @import 分音 (Partials)

@@ -4,12 +4,16 @@ import { MenuItemProps } from "./menuItem";
 
 type MenuMode = "horizontal" | "vertical"; // 字符串字面量类型 - 菜单栏类型：水平（horizontal）/垂直（vertical）
 export interface MenuProps {
-  defaultIndex?: string; // 默认 active 的菜单栏的索引值
+  /** 默认 active 的菜单栏的索引值 */
+  defaultIndex?: string;
   className?: string;
-  mode?: MenuMode; // 菜单栏类型：水平/垂直
+  /** 菜单栏类型：水平/垂直 */
+  mode?: MenuMode;
   style?: React.CSSProperties;
-  onSelect?: (selectedIndex: string) => void; // 点击菜单触发的回调函数
-  defaultOpenSubMenus?: string[]; // 设置子菜单的默认打开（纵向模式下生效）
+  /** 点击菜单触发的回调函数 */
+  onSelect?: (selectedIndex: string) => void;
+  /** 设置子菜单的默认打开（纵向模式下生效） */
+  defaultOpenSubMenus?: string[];
 }
 
 /** 菜单栏传递给子组件参数 */
@@ -26,6 +30,13 @@ interface IMenuContext {
  */
 export const MenuContext = createContext<IMenuContext>({ index: "0" });
 
+/**
+ * 为网站提供导航功能的菜单。支持横向纵向两种模式，支持下拉菜单。
+ * 
+ * ~~~js
+ * import { Menu } from 'vikingship'
+ * ~~~
+ */
 export const Menu: FC<MenuProps> = (props) => {
   const {
     className,
