@@ -2,4 +2,8 @@
 @import "reboot"; // Normalize.css
 @import "mixin"; // 全局 mixins
 
+@import "animation"; // animation
+
 @import "../components/Button/style"; // Button
+@import "../components/Menu/style"; // menu
+@import "../components/Icon/style"; // icon
