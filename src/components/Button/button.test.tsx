@@ -3,7 +3,7 @@ import { render, fireEvent } from "@testing-library/react";
 import Button, { ButtonProps } from "./button";
 
 const defaultProps = {
-  onClick: jest.fn(),
+  onClick: jest.fn(), // jest.fn()，生成一个mock函数
 };
 
 const testProps: ButtonProps = {
@@ -17,15 +17,24 @@ const disabledProps: ButtonProps = {
   onClick: jest.fn(),
 };
 
+/** 
+ * describe: 创建一个测试集
+ */
 describe("test Button component", () => {
   it("should render the correct default button", () => {
     const wrapper = render(<Button {...defaultProps}>Nice</Button>);
     const element = wrapper.getByText("Nice") as HTMLButtonElement;
+    /** 
+     * expect: 每次要测试一个值时都会使用expect函数。
+     * toBeFalsy: 匹配结果为 false 的值
+     * toHaveBeenCalled: 用来判断 mock function 是否被调用过
+     * .not: 用来测试相反的用例
+     */
     expect(element).toBeInTheDocument();
     expect(element.tagName).toEqual("BUTTON");
     expect(element).toHaveClass("btn btn-default");
-    expect(element.disabled).toBeFalsy();
-    fireEvent.click(element);
+    expect(element.disabled).toBeFalsy(); // 匹配任何
+    fireEvent.click(element); // 触发事件
     expect(defaultProps.onClick).toHaveBeenCalled();
   });
   it("should render the correct component based on different props", () => {
