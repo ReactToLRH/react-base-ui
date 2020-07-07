@@ -27,6 +27,7 @@ const testVerProps: MenuProps = {
   mode: "vertical",
   defaultOpenSubMenus: ["4"],
 };
+/** 生成菜单 */
 const generateMenu = (props: MenuProps) => {
   return (
     <Menu {...props}>
@@ -42,6 +43,7 @@ const generateMenu = (props: MenuProps) => {
     </Menu>
   );
 };
+/** 创建样式文件 */
 const createStyleFile = () => {
   const cssFile: string = `
     .viking-submenu {
@@ -62,6 +64,11 @@ let wrapper: RenderResult,
   menuElement: HTMLElement,
   activeElement: HTMLElement,
   disabledElement: HTMLElement;
+
+/** 
+ * beforeAll: 在所有测试之前做什么
+ * beforeEach: 在每一个测试之前做什么。
+ */
 describe("test Menu and MenuItem component in default(horizontal) mode", () => {
   beforeEach(() => {
     wrapper = render(generateMenu(testProps));
