@@ -1,0 +1,10 @@
+/*
+@each
+@each 指令的格式是 $var in <list>, $var 可以是任何变量名，比如 $length 或者 $name，而 <list> 是一连串的值，也就是值列表。
+@each 将变量 $var 作用于值列表中的每一个项目，然后输出结果
+*/
+@each $key, $val in $theme-colors {
+  .icon-#{$key} {
+    color: $val;
+  }
+}
