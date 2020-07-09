@@ -9,6 +9,16 @@
   + react-docgen-typescript-loader
   + 代码注释 —— JSDoc's规范
 + [rimraf](https://www.npmjs.com/package/rimraf): 跨平台删除插件
++ [husky](https://www.npmjs.com/package/husky): git 提交前进行校验
+  
+  ```json
+  // package.json 配置
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:nowatch && npm run lint"
+    }
+  },
+  ```
 
 ## 知识点
 
@@ -16,6 +26,7 @@
 
   如果需要导入 SCSS 或者 Sass 文件，但又不希望将其编译为 CSS，只需要在文件名前添加下划线，这样会告诉 Sass 不要编译这些文件，但导入语句中却不需要添加下划线。
 + 使用 `npm link` 本地测试组件库
++ 使用 `travis` 自动运行测试以及自动发布文档页面
 
 ## 目录结构
 
