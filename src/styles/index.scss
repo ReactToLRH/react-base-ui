@@ -1,9 +1,12 @@
 @import "variables"; // 各种变量以及可配置设置
 @import "reboot"; // Normalize.css
 @import "mixin"; // 全局 mixins
-
 @import "animation"; // animation
 
 @import "../components/Button/style"; // Button
 @import "../components/Menu/style"; // menu
 @import "../components/Icon/style"; // icon
+@import "../components/Input/style"; // input
+@import "../components/AutoComplete/style"; // auto-complete
+@import "../components/Upload/style"; // upload
+@import "../components/Progress/style"; // progress
